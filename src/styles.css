@@ -1094,6 +1094,10 @@ dialog :focus-visible {
   }
 }
 @media (max-width: 700px) {
+  html {
+    background: var(--forest);
+    overscroll-behavior: none;
+  }
   .mast-inner {
     min-height: 60px;
     gap: 10px;
@@ -1115,6 +1119,8 @@ dialog :focus-visible {
   }
   .hero-stage img {
     object-position: 68% 54%;
+    transform: scale(1.16);
+    transform-origin: 70% 85%;
     filter: saturate(0.82) sepia(0.1) contrast(1.05) brightness(1.05);
   }
   .hero-stage::after {
@@ -1218,8 +1224,8 @@ dialog :focus-visible {
     width: 100%;
     min-height: 44px;
   }
-  body {
-    padding-bottom: calc(60px + env(safe-area-inset-bottom, 0px));
+  .footer {
+    padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
   }
   .viewer-foot {
     align-items: start;

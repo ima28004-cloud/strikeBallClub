@@ -61,20 +61,30 @@ export function QuickBooking() {
   useEffect(() => {
     if (!window.IntersectionObserver) return;
     const visible = new Set();
+    let footerVisible = false;
+    const update = () => setHidden(footerVisible || visible.size > 0);
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.intersectionRatio >= 0.6) visible.add(entry.target);
           else visible.delete(entry.target);
         }
-        setHidden(visible.size > 0);
+        update();
       },
       { rootMargin: "0px 0px -60px 0px", threshold: 0.6 },
     );
     document
       .querySelectorAll(".hero .primary, .offer .primary, .contact .action")
       .forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+    const footerObserver = new IntersectionObserver(([entry]) => {
+      footerVisible = entry.isIntersecting;
+      update();
+    });
+    footerObserver.observe(document.querySelector("footer"));
+    return () => {
+      observer.disconnect();
+      footerObserver.disconnect();
+    };
   }, []);
   return (
     <aside hidden={hidden} className="mobile-book" aria-label="Быстрая запись">

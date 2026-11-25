@@ -51,7 +51,8 @@ const options = {
               () =>
                 `<script>\n${js.replace(/<\/script/gi, "<\\/script")}\n${reload}\n</script>`,
             );
-          await writeFile(resolve(dist, "airsoft.html"), page);
+          await writeFile(resolve(dist, "index.html"), page);
+          if (!serve) await writeFile(resolve(dist, "airsoft.html"), page);
         });
       },
     },
@@ -64,10 +65,10 @@ if (serve) {
   const { port } = await dev.serve({
     host: "127.0.0.1",
     servedir: dist,
-    fallback: resolve(dist, "airsoft.html"),
+    fallback: resolve(dist, "index.html"),
   });
-  console.log(`http://127.0.0.1:${port}/airsoft.html`);
+  console.log(`http://127.0.0.1:${port}/`);
 } else {
   await build(options);
-  console.log("dist/airsoft.html");
+  console.log("dist/index.html");
 }

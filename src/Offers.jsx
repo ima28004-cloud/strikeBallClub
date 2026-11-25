@@ -1,5 +1,4 @@
 import {
-  event,
   clubVK,
   clubMessages,
   venueRates,
@@ -7,19 +6,13 @@ import {
   rubles,
 } from "./club.js";
 
-export function GameNotice({ upcoming }) {
+export function GameNotice() {
   return (
     <div className="current">
       <div className="wrap current-inner">
         <div>
-          <b id="next-title">
-            {upcoming ? `Ближайшая игра · ${event.dateLabel}` : "Открытые игры"}
-          </b>
-          <p id="next-info">
-            {upcoming
-              ? `${event.price} за участника`
-              : "Даты и прокат уточняйте у организатора."}
-          </p>
+          <b id="next-title">Открытые игры</b>
+          <p id="next-info">Даты и прокат уточняйте у организатора.</p>
         </div>
         <a id="next-link" href={clubVK}>
           Объявления клуба

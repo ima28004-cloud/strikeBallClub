@@ -2,17 +2,6 @@ const communityId = "204414667";
 export const clubVK = `https://vk.com/club${communityId}`;
 export const clubMessages = `https://vk.com/im?sel=-${communityId}`;
 
-const starts = new Date("2026-11-29T10:00:00+03:00");
-export const event = {
-  starts,
-  dateLabel: new Intl.DateTimeFormat("ru-RU", {
-    day: "numeric",
-    month: "long",
-    timeZone: "Europe/Moscow",
-  }).format(starts),
-  price: "1 000 ₽",
-};
-
 export const venueRates = [
   { name: "Центральная площадка", capacity: 20, price: 26000 },
   { name: "Малая площадка", capacity: 10, price: 13000 },

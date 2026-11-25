@@ -11,7 +11,6 @@ export const event = {
     timeZone: "Europe/Moscow",
   }).format(starts),
   price: "1 000 ₽",
-  url: "https://gamra.ru/events/?ID=463",
 };
 
 export const venueRates = [

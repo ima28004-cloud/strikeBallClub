@@ -66,7 +66,7 @@ export default function App() {
       <main id="main">
         <Hero />
         <GameNotice upcoming={upcoming} />
-        <Offers upcoming={upcoming} />
+        <Offers />
         <Seam name="first" />
         <FirstGame />
         <Seam name="field" />

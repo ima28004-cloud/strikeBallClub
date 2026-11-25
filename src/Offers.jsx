@@ -21,15 +21,15 @@ export function GameNotice({ upcoming }) {
               : "Даты и прокат уточняйте у организатора."}
           </p>
         </div>
-        <a id="next-link" href={upcoming ? event.url : clubVK}>
-          {upcoming ? "Посмотреть условия игры" : "Объявления клуба"}
+        <a id="next-link" href={clubVK}>
+          Объявления клуба
         </a>
       </div>
     </div>
   );
 }
 
-export function Offers({ upcoming }) {
+export function Offers() {
   return (
     <section
       className="section formats dark"
@@ -91,13 +91,6 @@ export function Offers({ upcoming }) {
             </div>
             <a className="action primary arrow" href={clubMessages}>
               Записаться на открытую игру
-            </a>
-            <a
-              className="source"
-              id="event-source"
-              href={upcoming ? event.url : clubVK}
-            >
-              {upcoming ? "Объявление с условиями игры" : "Объявления клуба"}
             </a>
           </article>
           <article className="offer" id="group" aria-labelledby="group-title">

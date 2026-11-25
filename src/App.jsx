@@ -8,7 +8,7 @@ import {
   Contact,
   Footer,
 } from "./Sections.jsx";
-import { Offers, GameNotice } from "./Offers.jsx";
+import { Offers } from "./Offers.jsx";
 import { Gallery } from "./Gallery.jsx";
 import { Field } from "./Field.jsx";
 import { QuickBooking, SectionRail } from "./Navigation.jsx";
@@ -44,7 +44,6 @@ export default function App() {
       <Header />
       <main id="main">
         <Hero />
-        <GameNotice />
         <Offers />
         <Seam name="first" />
         <FirstGame />

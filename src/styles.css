@@ -608,32 +608,6 @@ article[id] {
 .motion-toggle:hover {
   background: var(--olive-raised);
 }
-.current {
-  background: var(--olive);
-  color: var(--sand);
-  border-block: 1px solid var(--olive-raised);
-}
-.current-inner {
-  min-height: 81px;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 14px;
-  padding-block: 11px;
-}
-.current b {
-  display: block;
-  color: var(--accent);
-  font-size: 1.08rem;
-}
-.current p {
-  color: var(--sand);
-  font-size: 0.9rem;
-}
-.current a {
-  color: var(--sand);
-  font-weight: 600;
-}
 .section {
   padding-block: clamp(60px, 8.4vw, 125px);
 }
@@ -1128,37 +1102,37 @@ dialog :focus-visible {
     display: none;
   }
   .hero-inner {
-    min-height: 600px;
-    align-items: end;
+    --hero-title-size: clamp(3.6rem, 13vw, 5.1rem);
+    min-height: 0;
+    align-items: start;
+    padding-top: 12px;
   }
   .hero-stage {
-    inset: 12px 0 auto;
-    height: 76%;
-    clip-path: polygon(8% 0, 100% 0, 100% 92%, 90% 100%, 0 100%, 0 11%);
+    position: relative;
+    inset: auto;
+    height: clamp(285px, 87vw, 440px);
+    clip-path: polygon(7% 0, 100% 0, 100% 91%, 93% 100%, 0 100%, 0 13%);
   }
   .hero-stage img {
-    object-position: 57% 39%;
+    object-position: 68% 54%;
+    filter: saturate(0.82) sepia(0.1) contrast(1.05) brightness(1.05);
   }
   .hero-stage::after {
-    background:
-      linear-gradient(
-        0deg,
-        var(--forest),
-        color-mix(in srgb, var(--forest) 83%, transparent) 24%,
-        color-mix(in srgb, var(--forest) 39%, transparent) 50%,
-        transparent 77%
-      ),
-      linear-gradient(
-        90deg,
-        color-mix(in srgb, var(--forest) 44%, transparent),
-        transparent 88%
-      );
+    background: linear-gradient(
+      0deg,
+      var(--forest),
+      color-mix(in srgb, var(--forest) 78%, transparent) 18%,
+      color-mix(in srgb, var(--forest) 28%, transparent) 39%,
+      transparent 62%
+    );
   }
   .hero-block {
-    padding: 170px 0 86px;
+    margin-top: calc(-2 * var(--hero-title-size) - 8px);
+    padding: 0 0 76px;
   }
   .hero h1 {
-    font-size: clamp(3.6rem, 13vw, 5.1rem);
+    font-size: var(--hero-title-size);
+    text-shadow: 0 2px 10px var(--brass-ink);
   }
   .hero-copy {
     margin-top: 15px;
@@ -1174,10 +1148,6 @@ dialog :focus-visible {
   }
   .hero-address {
     display: none;
-  }
-  .current-inner {
-    grid-template-columns: 1fr;
-    gap: 6px;
   }
   .first-grid,
   .field-layout,
@@ -1197,9 +1167,6 @@ dialog :focus-visible {
   }
 }
 @media (max-width: 530px) {
-  .hero-inner {
-    min-height: 560px;
-  }
   .brand-icon {
     width: 28px;
     height: 28px;
@@ -1276,9 +1243,6 @@ dialog :focus-visible {
 }
 .section {
   padding-block: clamp(51px, 6.2vw, 91px);
-}
-.current-inner {
-  min-height: 73px;
 }
 .section-heading {
   margin-bottom: 23px;

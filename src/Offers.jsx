@@ -1,26 +1,4 @@
-import {
-  clubVK,
-  clubMessages,
-  venueRates,
-  kitRate,
-  rubles,
-} from "./club.js";
-
-export function GameNotice() {
-  return (
-    <div className="current">
-      <div className="wrap current-inner">
-        <div>
-          <b id="next-title">Открытые игры</b>
-          <p id="next-info">Даты и прокат уточняйте у организатора.</p>
-        </div>
-        <a id="next-link" href={clubVK}>
-          Объявления клуба
-        </a>
-      </div>
-    </div>
-  );
-}
+import { clubMessages, venueRates, kitRate, rubles } from "./club.js";
 
 export function Offers() {
   return (

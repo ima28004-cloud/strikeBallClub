@@ -1,5 +1,4 @@
 const communityId = "204414667";
-export const clubVK = `https://vk.com/club${communityId}`;
 export const clubMessages = `https://vk.com/im?sel=-${communityId}`;
 
 export const venueRates = [
